@@ -1,13 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Contorl\" />
-    <Folder Include="Models\" />
-    <Folder Include="View\" />
+    <Folder Include="Data\" />
+    <Folder Include="Control\" />
   </ItemGroup>
 
 </Project>

@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "StajniaOjcowiznaCore/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/StajniaOjcowiznaCore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/StajniaOjcowiznaCore.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "StajniaOjcowiznaCore/1.0.0": {
+      "type": "project",
+      "path": "../StajniaOjcowiznaCore/StajniaOjcowiznaCore.csproj",
+      "msbuildProject": "../StajniaOjcowiznaCore/StajniaOjcowiznaCore.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "StajniaOjcowiznaCore >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\ubalc\\.nuget\\packages\\": {}
@@ -13,11 +32,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaConsole.csproj",
+      "projectUniqueName": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaConsole\\StajniaOjcowiznaConsole.csproj",
       "projectName": "StajniaOjcowiznaConsole",
-      "projectPath": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaConsole.csproj",
+      "projectPath": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaConsole\\StajniaOjcowiznaConsole.csproj",
       "packagesPath": "C:\\Users\\ubalc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowizna\\obj\\",
+      "outputPath": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaConsole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\ubalc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaCore\\StajniaOjcowiznaCore.csproj": {
+              "projectPath": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaCore\\StajniaOjcowiznaCore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

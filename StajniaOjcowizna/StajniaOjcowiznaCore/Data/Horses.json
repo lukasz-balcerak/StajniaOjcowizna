@@ -1,0 +1,40 @@
+{
+  "Horse": [
+    {
+      "Id": "1",
+      "Name": "Lusy"
+    },
+    {
+      "Id": "2",
+      "Name": "Whiskey"
+    },
+    {
+      "Id": "3",
+      "Name": "Bawenda"
+    },
+    {
+      "Id": "4",
+      "Name": "Savanka"
+    },
+    {
+      "Id": "5",
+      "Name": "Wenia"
+    },
+    {
+      "Id": "6",
+      "Name": "Avia"
+    },
+    {
+      "Id": "7",
+      "Name": "Czesio"
+    },
+    {
+      "Id": "8",
+      "Name": "Brysław"
+    },
+    {
+      "Id": "9",
+      "Name": "Brownie"
+    }
+  ]
+}
