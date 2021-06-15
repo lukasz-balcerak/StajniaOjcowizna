@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FuGygctLbjdqEGU8zWXlcuF32MOkv08wWE9u5wcvIyEnPJIg3CfDoHD8VjJpToyl1ZZl/YK2CT+7xxxYfRY2IA==",
+  "dgSpecHash": "QfzbivD7ZxgAwKBKAtv6PEnNCR+r8XlnlQXx54JpHLg0kZrg0FN50nVjURwmw3ulLRYy9vAFGYvjVp/6pVGNnA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ubalc\\Programming\\Projects\\StajniaOjcowizna\\StajniaOjcowizna\\StajniaOjcowiznaCore\\StajniaOjcowiznaCore.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\ubalc\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
   "logs": []
 }

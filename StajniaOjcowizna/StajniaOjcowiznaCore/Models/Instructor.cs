@@ -8,18 +8,14 @@ namespace StajniaOjcowiznaCore.Models
 {
     public class Instructor
     {
-        public int Id { get; private set; }
-        public string Name { get; private set; }
-        public string Surname { get; private set; }
-        public string Email { get; private set; }
+        public string Id { get; set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string Email { get; set; }
+    }
 
-        public Instructor(int id, string name, string surname, string email)
-        {
-            Id = id;
-            Name = name;
-            Surname = surname;
-            Email = email;
-        }
-
+    public class Instructors
+    {
+        public List<Instructor> InstructorsList { get; set; }
     }
 }

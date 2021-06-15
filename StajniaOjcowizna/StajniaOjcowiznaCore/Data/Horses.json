@@ -1,5 +1,4 @@
-{
-  "Horse": [
+[
     {
       "Id": "1",
       "Name": "Lusy"
@@ -37,4 +36,3 @@
       "Name": "Brownie"
     }
   ]
-}
