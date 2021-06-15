@@ -13,7 +13,8 @@ namespace StajniaOjcowiznaConsole
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello");
+            JSON.HorseData = JSON.LoadJson<Horse>("Horses.json");
+            JSON.InstructorData = JSON.LoadJson<Instructor>("Instructors.json");
         }
     }
 }
