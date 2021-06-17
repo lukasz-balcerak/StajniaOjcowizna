@@ -15,6 +15,9 @@ namespace StajniaOjcowiznaConsole
         {
             JSON.HorseData = JSON.LoadJson<Horse>("Horses.json");
             JSON.InstructorData = JSON.LoadJson<Instructor>("Instructors.json");
+            Horse Siwiy = new Horse("Siwy");
+            JSON.HorseData.Add(Siwiy);
+            JSON.SaveJson<Horse>(JSON.HorseData, "Horses.json" );
         }
     }
 }

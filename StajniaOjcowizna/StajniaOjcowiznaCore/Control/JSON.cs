@@ -15,6 +15,7 @@ namespace StajniaOjcowiznaCore.Control
     {
         public static List<Instructor> InstructorData = new List<Instructor>();
         public static List<Horse> HorseData = new List<Horse>();
+        public static List<Lesson> LessonsData = new List<Lesson>();
         public static List<T> LoadJson<T>(string fileName)
         {
             List<T> Data = new List<T>();
@@ -27,6 +28,12 @@ namespace StajniaOjcowiznaCore.Control
             }
 
             return Data;
+        }
+
+        public static void SaveJson<T>(List<T> dataToSave, string fileName)
+        {
+            string savingData = JsonConvert.SerializeObject(dataToSave.ToArray());
+            System.IO.File.WriteAllText($@"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}", savingData);
         }
     }
 }
