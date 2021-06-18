@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StajniaOjcowiznaCore.Models
 {
@@ -58,15 +55,5 @@ namespace StajniaOjcowiznaCore.Models
         public List<Horse> RidingHorses = new List<Horse>();
         public List<string> Students = new List<string>();
         public Dictionary<Horse, string> HorseForStudent = new Dictionary<Horse, string>();
-
-        public void AddStudent(string studentName)
-        {
-            Students.Add(studentName);
-        }
-
-        public void AddHorse()
-        {
-
-        }
     }
 }
