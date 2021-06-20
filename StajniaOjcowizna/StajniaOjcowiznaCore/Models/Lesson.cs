@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using StajniaOjcowiznaCore.Control;
 
 namespace StajniaOjcowiznaCore.Models
 {
@@ -12,6 +13,7 @@ namespace StajniaOjcowiznaCore.Models
             DateStart = date;
             DateEnd = date.AddHours(1).AddMinutes(30);
             FreePlaces = 4;
+            Id = JSON.LessonsData.Count + 1;
         }
     }
 
@@ -22,6 +24,7 @@ namespace StajniaOjcowiznaCore.Models
             DateStart = date;
             DateEnd = date.AddHours(1).AddMinutes(30);
             FreePlaces = 1;
+            Id = JSON.LessonsData.Count + 1;
         }
     }
 
@@ -32,6 +35,7 @@ namespace StajniaOjcowiznaCore.Models
             DateStart = date;
             DateEnd = date.AddHours(1);
             FreePlaces = 1;
+            Id = JSON.LessonsData.Count + 1;
         }
     }
 
@@ -42,18 +46,19 @@ namespace StajniaOjcowiznaCore.Models
             DateStart = date;
             DateEnd = date.AddMinutes(30);
             FreePlaces = 1;
+            Id = JSON.LessonsData.Count + 1;
         }
     }
 
-    public abstract class Lesson
+    public class Lesson
     {
-        public int Id { get; set; }
+        public int Id;
         public DateTime DateStart { get; set; }
         public DateTime DateEnd;
         public int FreePlaces;
         public int TookedPlaces;
         public List<Horse> RidingHorses = new List<Horse>();
         public List<string> Students = new List<string>();
-        public Dictionary<Horse, string> HorseForStudent = new Dictionary<Horse, string>();
+        public Dictionary<Horse, string> HorseForStudent = new();
     }
 }

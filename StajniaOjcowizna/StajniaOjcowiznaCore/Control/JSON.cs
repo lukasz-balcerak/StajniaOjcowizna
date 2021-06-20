@@ -1,10 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Channels;
-using System.Threading.Tasks;
 using Newtonsoft.Json;
 using StajniaOjcowiznaCore.Models;
 
@@ -20,7 +16,7 @@ namespace StajniaOjcowiznaCore.Control
         {
             List<T> Data = new List<T>();
             string CurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string path = Path.Combine(CurrentDirectory, @$"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}");
+            string path = Path.Combine(CurrentDirectory, @$"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}.json");
             using (StreamReader reader = new StreamReader(path))
             {
                 path = reader.ReadToEnd();
@@ -33,7 +29,7 @@ namespace StajniaOjcowiznaCore.Control
         public static void SaveJson<T>(List<T> dataToSave, string fileName)
         {
             string savingData = JsonConvert.SerializeObject(dataToSave.ToArray());
-            System.IO.File.WriteAllText($@"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}", savingData);
+            System.IO.File.WriteAllText($@"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}.json", savingData);
         }
     }
 }
