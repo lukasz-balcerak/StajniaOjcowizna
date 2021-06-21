@@ -1,11 +1,8 @@
 ﻿using StajniaOjcowiznaCore;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Threading.Channels;
 using StajniaOjcowiznaCore.Control;
 using StajniaOjcowiznaCore.Models;
-using Newtonsoft.Json;
+using ConsoleTables;
 
 namespace StajniaOjcowiznaConsole
 {
@@ -15,9 +12,18 @@ namespace StajniaOjcowiznaConsole
         {
             JSON.HorseData = JSON.LoadJson<Horse>("Horses");
             JSON.InstructorData = JSON.LoadJson<Instructor>("Instructors");
-            JSON.LessonsData = JSON.LoadJson<Lesson>("Lessons");
-
-
+            //JSON.LessonsData = JSON.LoadJson<Lesson>("Lessons");
+            DateTime date = new DateTime(2021, 06, 21, 18, 30, 00);
+            TimeSpan time = new TimeSpan(1, 30, 00);
+            Lesson lesson = new Lesson(date, "Indywidualna", 1, time);
+            JSON.LessonsData.Add(lesson);
+            JSON.SaveJson<Lesson>(JSON.LessonsData,"Lessons");
+    
+            
+            ConsoleTable
+                .From<Lesson>(JSON.LessonsData)
+                .Configure(o => o.NumberAlignment = Alignment.Left)
+                .Write(Format.MarkDown);
         }
     }
 }

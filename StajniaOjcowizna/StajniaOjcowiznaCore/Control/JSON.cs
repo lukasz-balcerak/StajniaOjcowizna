@@ -15,8 +15,8 @@ namespace StajniaOjcowiznaCore.Control
         public static List<T> LoadJson<T>(string fileName)
         {
             List<T> Data = new List<T>();
-            string CurrentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-            string path = Path.Combine(CurrentDirectory, @$"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}.json");
+            string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            string path = Path.Combine(currentDirectory, @$"..\..\..\..\StajniaOjcowiznaCore\Data\{fileName}.json");
             using (StreamReader reader = new StreamReader(path))
             {
                 path = reader.ReadToEnd();
