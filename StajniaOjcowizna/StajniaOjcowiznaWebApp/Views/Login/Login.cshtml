@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Login";
+    Layout = "_LayoutEmpty";
+}
+
+
+<div class="space">
+
+</div>
+<img class="logo" 
+     src="image/Logo.png"
+     alt="Stajnia Ojcowizna - Logo"/>
+
+<form class="login">
+    <fieldset class="signIn">
+        <legend class="legend">
+            Login
+        </legend>
+        <div class="input">
+            <input type="email"
+                   placeholder="Email"
+                   required/>
+            <br/>
+            <span id="emailIcon">
+                <i class="fa fa-envelope"></i>
+            </span>
+        </div>
+        <div class="input">
+            <input type="password"
+                   placeholder="Password"
+                   required/>
+            <br/>
+            <span id="passwordIcon">
+                <i class="fa fa-lock"></i>
+            </span>
+        </div>
+        <button type="submit"
+                class="submit">
+            <i class="fa fa-arrow-right"></i>
+        </button>
+    </fieldset>
+</form>

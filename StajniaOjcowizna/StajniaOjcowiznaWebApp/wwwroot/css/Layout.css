@@ -1,0 +1,146 @@
+﻿
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #EAEAEA;
+    font-family: Montserrat;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px);
+}
+
+.space {
+    height: calc((100% - 554px)/2);
+    width: 100%;
+}
+
+.logo {
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.login {
+    display: table;
+    position: relative;
+    top: 25px;
+    width: 300px;
+    margin: 0 auto 0 auto;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.legend {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 20px;
+    color: #fff;
+    background: #D41F52;
+}
+.legend:after{
+    content: "";
+    background-image: url(http://simpleicon.com/wp-content/uploads/multy-user.png);
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+    background-position: 182px -16px;
+    opacity: 0.06;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+}
+
+.input {
+    position: relative;
+    width: 90%;
+    margin:5px auto;
+}
+
+.input span {
+    position: absolute;
+    display: block;
+    color: #000;
+    left: 10px;
+    top: 8px;
+    font-size: 24px;
+}
+
+.input input {
+    display: block;
+    width: 100%;
+    padding: 10px 5px 10px 40px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: 0.2s ease-out;
+    color: #000;
+}
+
+.input input:focus {
+    padding: 10px 5px 10px 10px;
+    outline: 0;
+    border-color: #D41F52;
+}
+
+.input input:focus + .input span {
+    border: solid black 1px;
+}
+
+.submit {
+    display: block;
+    width: 45px;
+    height: 45px;
+    margin: 0 auto;
+    background: #EAEAEA;
+    border-radius: 100%;
+    border: 1px solid #D41F52;
+    color: #D41F52;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0px 0px 0px 3px #D41F52;
+    transition: 0.2s ease-out;
+}
+
+.submit i {
+    transition: 0.2s ease-out;
+}
+
+.submit:hover, .submit:hover i{
+    background: #D41F52;
+    color: #EAEAEA;
+    outline: 0;
+}
+
+.submit:focus, .submit:focus i {
+    background: #D41F52;
+    color: #EAEAEA;
+    outline: 0;
+}
+
+.footer {
+    display: flex;
+    height: 40px;
+}
+
+.copyright {
+    margin: 0 auto;
+}
+
+.copyright p {
+    padding: 10px 0;
+}
+
