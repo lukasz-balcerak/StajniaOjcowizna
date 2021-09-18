@@ -12,4 +12,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SODataAccessLibrary\SODataAccessLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

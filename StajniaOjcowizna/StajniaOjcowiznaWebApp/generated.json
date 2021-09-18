@@ -1,0 +1,44 @@
+[
+  {
+    "FirstName": "Ewa",
+    "LastName": "Suchecka",
+    "Email": "ewasuchecka@gmail.com",
+    "Phone": "+1 (933) 483-3803",
+    "Password": "123qwe123"
+  },
+  {
+    "FirstName": "£ukasz",
+    "LastName": "Balcerak",
+    "Email": "ubalcerak@gmail.com",
+    "Phone": "+1 (951) 560-2394",
+    "Password": "Gwyn123bleid93"
+  },
+  {
+    "FirstName": "Hays",
+    "LastName": "Sloan",
+    "Email": "hayssloan@digial.com",
+    "Phone": "+1 (874) 594-2849",
+    "Password": "2Boling3"
+  },
+  {
+    "FirstName": "Meredith",
+    "LastName": "Harrell",
+    "Email": "meredithharrell@digial.com",
+    "Phone": "+1 (924) 402-3937",
+    "Password": "9Lacomb7"
+  },
+  {
+    "FirstName": "Curtis",
+    "LastName": "Petty",
+    "Email": "curtispetty@digial.com",
+    "Phone": "+1 (940) 600-2422",
+    "Password": "5Trexlertown4"
+  },
+  {
+    "FirstName": "Marisol",
+    "LastName": "Sparks",
+    "Email": "marisolsparks@digial.com",
+    "Phone": "+1 (870) 492-3834",
+    "Password": "5Oley1"
+  }
+]
