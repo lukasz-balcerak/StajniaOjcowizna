@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SODataAccessLibrary.DataAccess;
@@ -17,6 +18,7 @@ namespace StajniaOjcowiznaWebApp
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -29,6 +31,8 @@ namespace StajniaOjcowiznaWebApp
             {
                 options.UseSqlServer(Configuration.GetConnectionString("Default"));
             });
+            services.AddMvc();
+            string constr = this.Configuration.GetConnectionString("Default");
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,6 +56,7 @@ namespace StajniaOjcowiznaWebApp
                     name: "default",
                     pattern: "{controller=Login}/{action=Login}/{Id?}");
             });
+
         }
     }
 }

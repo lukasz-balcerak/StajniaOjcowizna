@@ -7,8 +7,13 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
+using System.Configuration;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Protocols;
 using SODataAccessLibrary.DataAccess;
 using SODataAccessLibrary.Models;
+
 
 namespace StajniaOjcowiznaWebApp.Controllers
 {
@@ -16,11 +21,13 @@ namespace StajniaOjcowiznaWebApp.Controllers
     {
         private readonly ILogger<LoginController> _logger;
         private readonly LessonContext _db;
+        private readonly string _conn;
 
-        public LoginController(ILogger<LoginController> logger, LessonContext db)
+        public LoginController(ILogger<LoginController> logger, LessonContext db, IConfiguration configuration)
         {
             _logger = logger;
             _db = db;
+            _conn = configuration.GetConnectionString("Default");
         }
 
         private void LoadSampleData()
@@ -33,10 +40,20 @@ namespace StajniaOjcowiznaWebApp.Controllers
                 _db.SaveChanges();
             }
         }
-
-        public IActionResult Login()
+        public IActionResult LogInSubbmit(LoginModel loginUser)
         {
-            LoadSampleData();
+            var emailAddress = loginUser.EmailAddress;
+            var password = loginUser.Password;
+            var users = _db.Instructors;
+            var userInDataBase = users.FirstOrDefault(e => e.Email == emailAddress);
+            if (userInDataBase != null && userInDataBase.Password == password)
+            {
+                return View("LogInSukces");
+            }
+            return View("LogInError");
+        }
+        public IActionResult LogIn()
+        {
             return View();
         }
 

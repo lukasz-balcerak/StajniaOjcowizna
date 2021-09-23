@@ -1,4 +1,7 @@
-﻿@{
+﻿@model StajniaOjcowiznaWebApp.Models.LoginModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
     ViewData["Title"] = "Login";
     Layout = "_LayoutEmpty";
 }
@@ -7,34 +10,34 @@
 <div class="space">
 
 </div>
-<img class="logo" 
+<img class="logo"
      src="image/Logo.png"
-     alt="Stajnia Ojcowizna - Logo"/>
+     alt="Stajnia Ojcowizna - Logo" />
 
-<form class="login">
+<form asp-action="LogIn" class="login">
     <fieldset class="signIn">
         <legend class="legend">
             Login
         </legend>
         <div class="input">
-            <input type="email"
-                   placeholder="Email"
-                   required/>
-            <br/>
+            <input asp-for="EmailAddress" 
+                   placeholder="Email"/>
+            <br />
             <span id="emailIcon">
                 <i class="fa fa-envelope"></i>
             </span>
         </div>
         <div class="input">
-            <input type="password"
+            <input asp-for="Password"
                    placeholder="Password"
                    required/>
-            <br/>
+            <br />
             <span id="passwordIcon">
                 <i class="fa fa-lock"></i>
             </span>
         </div>
-        <button type="submit"
+        <button asp-controller="Login" asp-action="LogInSubbmit"
+                type="submit"
                 class="submit">
             <i class="fa fa-arrow-right"></i>
         </button>
