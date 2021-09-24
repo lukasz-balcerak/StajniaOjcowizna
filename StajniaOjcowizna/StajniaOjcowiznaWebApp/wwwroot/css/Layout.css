@@ -47,6 +47,9 @@
     margin: 20px 0;
     padding: 15px;
     font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px black;
     color: #fff;
     background: #D41F52;
 }
@@ -129,6 +132,20 @@
     background: #D41F52;
     color: #EAEAEA;
     outline: 0;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.error-msg {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    text-align: center;
+    font-weight: bold;
+    color: red;
+
 }
 
 .footer {

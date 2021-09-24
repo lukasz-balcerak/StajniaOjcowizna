@@ -54,7 +54,7 @@ namespace StajniaOjcowiznaWebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Login}/{action=Login}/{Id?}");
+                    pattern: "{controller=LogIn}/{action=LogIn}/{Id?}");
             });
 
         }

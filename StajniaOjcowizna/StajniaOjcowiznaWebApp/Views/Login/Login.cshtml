@@ -4,6 +4,7 @@
 @{
     ViewData["Title"] = "Login";
     Layout = "_LayoutEmpty";
+    var styleClass = ViewData["Style"];
 }
 
 
@@ -17,11 +18,12 @@
 <form asp-action="LogIn" class="login">
     <fieldset class="signIn">
         <legend class="legend">
-            Login
+            stajniaojcowizna 
         </legend>
         <div class="input">
             <input asp-for="EmailAddress" 
-                   placeholder="Email"/>
+                   placeholder="Email"
+                   required/>
             <br />
             <span id="emailIcon">
                 <i class="fa fa-envelope"></i>
@@ -35,11 +37,16 @@
             <span id="passwordIcon">
                 <i class="fa fa-lock"></i>
             </span>
+            
         </div>
-        <button asp-controller="Login" asp-action="LogInSubbmit"
-                type="submit"
-                class="submit">
-            <i class="fa fa-arrow-right"></i>
-        </button>
+        <div>
+            <button asp-controller="Login" asp-action="LogInSubbmit"
+                    type="submit"
+                    class="submit"
+            >
+                <i class="fa fa-arrow-right"></i>
+            </button>
+            <span runat="server" id="error" class="error-msg @styleClass"> Adres email lub hasło są niepoprawne </span>
+        </div>
     </fieldset>
 </form>

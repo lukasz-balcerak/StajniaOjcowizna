@@ -15,5 +15,6 @@ namespace StajniaOjcowiznaWebApp.Models
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "Podaj hasło")]
         public string Password { get; set; }
+
     }
 }

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using System.Configuration;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.WebEncoders.Testing;
 using Microsoft.IdentityModel.Protocols;
 using SODataAccessLibrary.DataAccess;
 using SODataAccessLibrary.Models;
@@ -22,7 +23,6 @@ namespace StajniaOjcowiznaWebApp.Controllers
         private readonly ILogger<LoginController> _logger;
         private readonly LessonContext _db;
         private readonly string _conn;
-
         public LoginController(ILogger<LoginController> logger, LessonContext db, IConfiguration configuration)
         {
             _logger = logger;
@@ -40,6 +40,7 @@ namespace StajniaOjcowiznaWebApp.Controllers
                 _db.SaveChanges();
             }
         }
+
         public IActionResult LogInSubbmit(LoginModel loginUser)
         {
             var emailAddress = loginUser.EmailAddress;
@@ -50,12 +51,21 @@ namespace StajniaOjcowiznaWebApp.Controllers
             {
                 return View("LogInSukces");
             }
-            return View("LogInError");
-        }
-        public IActionResult LogIn()
-        {
-            return View();
-        }
 
+            return RedirectToAction("LogIn", new { isInDB = true});
+        }
+        public IActionResult LogIn(bool isInDB)
+        {
+            if (isInDB == true)
+            {
+                ViewData["Style"] = "";
+                return View();
+            }
+            else
+            {
+                ViewData["Style"] = "hide";
+                return View();
+            }
+        }
     }
 }
