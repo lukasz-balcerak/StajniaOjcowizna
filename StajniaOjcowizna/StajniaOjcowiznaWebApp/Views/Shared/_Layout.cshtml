@@ -1,8 +1,81 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-</head>
-<body>
+﻿@using StajniaOjcowiznaWebApp.Models
+@model StajniaOjcowiznaWebApp.Models.InstructorModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-</body>
+@{
+    var FirstName = ViewData["FirstName"];
+    var LastName = ViewData["LastName"];
+    var Role = ViewData["Role"];
+}
+
+<DOCTYPE html!>
+    <html lang="pl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1.0" />
+        <title> Stajnia Ojcowizna - @ViewData["Title"] </title>
+        <link rel="stylesheet"
+              type="text/css"
+              href="~/css/Layout.css" />
+        <link rel="stylesheet"
+              href="https://fonts.googleapis.com/css?family=Montserrat" />
+        <link rel="stylesheet"
+              href="~/css/all.css" />
+    </head>
+    <body>
+    <nav>
+        <div class="sidebar-content">
+            <div class="sidebar-info">
+                <div class="icon">
+                    <img class="logo" 
+                         src="~/image/Logo.png"
+                         alt="Stajnia Ojcowizna - Logo"/>
+                    <p class="logo-info">stajniaojcowizna</p>
+                </div>
+            </div>
+            <div class="sidebar-header">
+                <div class="user-img">
+                    <img 
+                        src="~/image/Home/default-user-img.jpg"
+                        alt="User image"/>
+                </div>
+                <div class="user-info">
+                    <p class="user-name">@FirstName <br> @LastName</p>
+                    <p class="user-role">@Role</p>
+                </div>
+            </div>
+            <div class="user-choice">
+                <ul>
+                    <li class="choice">
+                        <i class="fas fa-clipboard icon"> </i>
+                        <a>Jazdy</a>
+                    </li>
+                    <li class="choice">
+                        <i class="fas fa-horse-head icon"> </i>
+                        <a>Konie</a>
+                    </li>
+                    <li class="choice">
+                        <i class="fas fa-warehouse icon"> </i>
+                        <a>Stajnia</a>
+                    </li>
+                    <li class="choice">
+                        <i class="fas fa-sign-out-alt icon"> </i>
+                        <a>Wyloguj</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        @RenderBody()
+    </div>
+    <footer>
+        <p> Copyright @DateTime.Now.Year &copy; </p>
+    </footer>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    </body>
 </html>
+</DOCTYPE>

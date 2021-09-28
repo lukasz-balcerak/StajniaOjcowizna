@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SODataAccessLibrary.DataAccess;
@@ -54,9 +55,12 @@ namespace StajniaOjcowiznaWebApp
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=LogIn}/{action=LogIn}/{Id?}");
+                    pattern: "{controller=Login}/{action=LogIn}/{Id?}");
+                endpoints.MapControllerRoute(
+                    "First",
+                    "{controller}/{action}/{instructorFirstName}/{instructorLastName}/{role}",
+                    new {controller = "Home", action = "Index"});
             });
-
         }
     }
 }

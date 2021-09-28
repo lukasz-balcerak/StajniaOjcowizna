@@ -1,17 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using StajniaOjcowiznaWebApp.Models;
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
-using System.Threading.Tasks;
-using System.Xml.Serialization;
-using System.Configuration;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.WebEncoders.Testing;
-using Microsoft.IdentityModel.Protocols;
 using SODataAccessLibrary.DataAccess;
 using SODataAccessLibrary.Models;
 
@@ -41,22 +34,31 @@ namespace StajniaOjcowiznaWebApp.Controllers
             }
         }
 
+        [HttpPost]
         public IActionResult LogInSubbmit(LoginModel loginUser)
         {
+
             var emailAddress = loginUser.EmailAddress;
             var password = loginUser.Password;
             var users = _db.Instructors;
             var userInDataBase = users.FirstOrDefault(e => e.Email == emailAddress);
             if (userInDataBase != null && userInDataBase.Password == password)
             {
-                return View("LogInSukces");
+                var user = new InstructorModel()
+                {
+                    FirstName = userInDataBase.FirstName,
+                    LastName = userInDataBase.LastName,
+                    Role = "Instructor"
+                };
+                return RedirectToAction("Index", "Home", user);
             }
 
-            return RedirectToAction("LogIn", new { isInDB = true});
+            return RedirectToAction("LogIn", new { isInDB = "false"});
         }
-        public IActionResult LogIn(bool isInDB)
+
+        public IActionResult LogIn(string isInDB)
         {
-            if (isInDB == true)
+            if (isInDB == "false")
             {
                 ViewData["Style"] = "";
                 return View();
