@@ -60,6 +60,7 @@ namespace StajniaOjcowiznaWebApp.Controllers
         {
             if (isInDB == "false")
             {
+                LoadSampleData();
                 ViewData["Style"] = "";
                 return View();
             }
